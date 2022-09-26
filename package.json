@@ -1,0 +1,19 @@
+{
+  "name": "express-task-management-app",
+  "version": "1.0.0",
+  "description": "Managers can create projects, create tasks for specific project to assign to users, and tack the status of these tasks",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeropin/task-management-application.git"
+  },
+  "author": "Jerome Pineda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeropin/task-management-application/issues"
+  },
+  "homepage": "https://github.com/Jeropin/task-management-application#readme"
+}
