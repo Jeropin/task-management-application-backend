@@ -2,14 +2,15 @@
 
 // require in our dependencies
 const cors = require("cors");
-const exprees = require("express");
+const express = require("express");
 
 // call the express functions which create the express applicaiton
 // this allows us to use the full functionality of our express application
 const app = express();
-const port = 888;
+const port = 8888;
 
-// TODO: require in our route resource
+// require in our route resource
+const projects = require("./api/routes/projects")
 
 // apply our cors middleware
 app.use(cors());
@@ -17,7 +18,8 @@ app.use(cors());
 // middleware to pares POST/PUT bodies express
 app.use(express.json());
 
-// TODO: add resouce route to our express app
+// add resouce route to our express app
+app.use("/projects", projects)
 
 //start the server
 app.listen(port, () =>{

@@ -19,7 +19,8 @@
   "homepage": "https://github.com/Jeropin/task-management-application#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "package.json": "^2.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
