@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "Create Art Assets",
+        "details": "Create the art assets on Blender",
+        "piriority": "high",
+        "status": "assigned",
+        "timeline": {
+            "dateAssigned": "6-20-2022",
+            "dateDue": "7-20-2022",
+            "lastUpdate": "6-25-2022"
+        },
+        "userID": 1,
+        "projectID" : 2
+    },
+
+    {
+        "id": 2,
+        "name": "Create Some",
+        "details": "Create some on java",
+        "piriority": "low",
+        "status": "in review",
+        "timeline": {
+            "dateAssigned": "5-20-2022",
+            "dateDue": "6-30-2022",
+            "lastUpdate": "6-21-2022"
+        },
+        "projectID": 3,
+        "userID": 5
+    },
+
+    {
+        "id": 3,
+        "name": "Do Lab 2 Part 1",
+        "details": "Create a json file with mock data in it",
+        "piriority": "medium",
+        "status": "in progress",
+        "timeline": {
+            "dateAssigned": "9-20-2022",
+            "dateDue": "9-23-2022",
+            "lastUpdate": "9-21-2022"
+        },
+        "projectID": 1,
+        "userID": 9
+    }
+]
