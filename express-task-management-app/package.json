@@ -4,7 +4,8 @@
   "description": "Managers can create projects, create tasks for specific project to assign to users, and tack the status of these tasks",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/Jeropin/task-management-application/issues"
   },
-  "homepage": "https://github.com/Jeropin/task-management-application#readme"
+  "homepage": "https://github.com/Jeropin/task-management-application#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
