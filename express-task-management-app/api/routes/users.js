@@ -3,15 +3,16 @@ const router = require("express").Router();
 const users = require("../../../mock-data/users.json");
 
 // GET /users
+// Note: changed users.json data for isActive from bool to string
 router.get("/", (req, res) =>{
     const { query } = req;
-    const isActive = query.isActive;
+    const isActive = query.isActive
     
     let all = users;
 
-    if(usisActiveers){
+    if(isActive){
         all = users.filter((user)=>{
-            return user.isActive.includes(isActive);
+            return user.isActive === isActive;
         })
     }
 
@@ -49,3 +50,5 @@ router.put("/:id", (req, res) =>{
         res.status(404).json({error: `User by id ${id} not found`})
     }
 })
+
+module.exports = router;

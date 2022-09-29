@@ -4,7 +4,7 @@
         "firstName": "Darwin",
         "lastName": "Waterson",
         "titleOrPosition": "Documentation Lead",
-        "isActive": true,
+        "isActive": "false",
         "projectID": 2,
         "taskID": [1, 5, 3]
     },
@@ -14,7 +14,7 @@
         "firstName": "Gumball",
         "lastName": "Waterson",
         "titleOrPosition":"Programmer Lead",
-        "isActive": true,
+        "isActive": "true",
         "projectID": 2,
         "taskID":[7]
     },
@@ -24,8 +24,7 @@
         "firstName": "Benson",
         "lastName": "Bee",
         "titleOrPosition": "Manager",
-        "manager": "N/A",
-        "isActive": true,
+        "isActive": "true",
         "projectID": 2,
         "taskID": []
     }

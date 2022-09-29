@@ -12,7 +12,7 @@ const port = 8888;
 // require in our route resource
 const projects = require("./api/routes/projects");
 const tasks = require("./api/routes/tasks");
-const users = require("./api/routes/users")
+const users = require("./api/routes/users");
 
 // apply our cors middleware
 app.use(cors());
@@ -23,7 +23,7 @@ app.use(express.json());
 // add resouce route to our express app
 app.use("/projects", projects);
 app.use("/tasks", tasks);
-app.use("users", users);
+app.use("/users", users);
 
 //start the server
 app.listen(port, () =>{
