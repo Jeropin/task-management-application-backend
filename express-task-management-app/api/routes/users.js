@@ -20,7 +20,7 @@ router.get("/", (req, res) =>{
 })
 
 // GET /users/id
-router.get("/id", (req, res) =>{
+router.get("/:id", (req, res) =>{
     const { params } = req;
     const id = params.id;
     
