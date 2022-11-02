@@ -1,3 +1,4 @@
+//Virtualize this or tasks
 //HEY FIX THE NAME OF REPOSITORY
 const mongoose = require('mongoose');
 
@@ -12,7 +13,7 @@ const ProjectSchema = new Schema({
         }
     },
     description: String,
-    respository: String,
+    repository: String,
     
     manager: {
         type: mongoose.Schema.Types.ObjectId, 

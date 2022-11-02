@@ -1,3 +1,4 @@
+// Either virtualize this or projects
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;

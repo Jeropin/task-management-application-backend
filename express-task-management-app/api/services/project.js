@@ -14,14 +14,11 @@ const _isUniqueName = async (name) =>{
     }
 }
 
-
-
 // Gets all proejcts
 const getAllProjects = async () => await SharedService.all(Project);
 
 // Gets project by id and populated the manager and task
-const getProjectById = async (id) => {
-
+const getProjectById = async (id) => {  
     const getProject = await Project.findById(id).
     populate('manager').
     populate({
@@ -31,7 +28,6 @@ const getProjectById = async (id) => {
     });
 
     return getProject;
-
 }
 
 // Gets project by query of name
@@ -66,8 +62,7 @@ const updateProject = async(body, id) =>{
     const {name} = body;
     const isUniqueName = await _isUniqueName(name);
 
-
-
+    
     if(isUniqueName){
         const updatedProject = await SharedService.update(Project, id, body);
         return updatedProject
