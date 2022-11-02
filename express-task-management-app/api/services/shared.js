@@ -1,5 +1,5 @@
 // common crud operations
-// Developed by Professor Auman
+// Developed by Cydney Auman
 
 const all = async (Model) => {
     try {

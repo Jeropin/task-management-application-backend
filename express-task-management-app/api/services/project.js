@@ -19,15 +19,20 @@ const getAllProjects = async () => await SharedService.all(Project);
 
 // Gets project by id and populated the manager and task
 const getProjectById = async (id) => {  
-    const getProject = await Project.findById(id).
-    populate('manager').
-    populate({
-        path: 'tasks', 
-        model: 'Task',
-        select: ['_id', 'name', 'details'],
-    });
 
-    return getProject;
+    try{
+        const project = await Project.findById(id).
+        populate('manager').
+        populate({
+            path: 'tasks', 
+            model: 'Task',
+            select: ['_id', 'name', 'details'],
+        });
+
+        return project;
+    } catch (error){
+        return error
+    }
 }
 
 // Gets project by query of name
@@ -58,16 +63,20 @@ const createProject = async (body) => {
     }
 }
 
+// Updates project with id
 const updateProject = async(body, id) =>{
     const {name} = body;
-    const isUniqueName = await _isUniqueName(name);
 
+    // Checks if name is unique
+    const isUniqueName = await _isUniqueName(name);
     
+    // If Name is unique update project with body
     if(isUniqueName){
         const updatedProject = await SharedService.update(Project, id, body);
         return updatedProject
     } 
 
+    // Else throw Error
     else{
         throw new Error(`Cannot update project, Name:${name} is already taken.`);
     }
