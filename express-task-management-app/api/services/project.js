@@ -21,6 +21,8 @@ const getAllProjects = async () => await SharedService.all(Project);
 const getProjectById = async (id) => {  
 
     try{
+
+        // Find project and populate the manager and tasks
         const project = await Project.findById(id).
         populate('manager').
         populate({
@@ -72,7 +74,7 @@ const updateProject = async(body, id) =>{
     
     // If Name is unique update project with body
     if(isUniqueName){
-        const updatedProject = await SharedService.update(Project, id, body);
+        const updatedProject = await SharedService.updateProjectById(Project, id, body);
         return updatedProject
     } 
 

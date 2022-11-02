@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const UserService = require("../services/user");
 
+// Get User
 const getUser = async (req, res) => {
     const { query } = req;
     const isActive = query.isActive;
@@ -17,6 +18,7 @@ const getUser = async (req, res) => {
     }
 };
 
+// Create User
 const createUser = async (req, res) =>{
     const { body } = req;
     try{
@@ -27,6 +29,7 @@ const createUser = async (req, res) =>{
     }
 }
 
+// Get User by ID
 const getUserById = async (req, res) =>{
     const { params: {id} } = req;
 
@@ -38,6 +41,7 @@ const getUserById = async (req, res) =>{
     }
 }
 
+// Update User By ID
 const updateUserById = async (req, res) =>{
     const {body, params: {id}} = req;
     try{

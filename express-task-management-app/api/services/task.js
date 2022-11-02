@@ -12,7 +12,7 @@ const _canUpdateTask = async (id) =>{
 const createTask = async(body) => await SharedService.create(Task, body);
 
 // Deletes a task using id
-const deleteTask = async(id) => await SharedService.remove(Task, id);
+const deleteTaskById = async(id) => await SharedService.remove(Task, id);
 
 // Gets task by id
 const getTaskById = async (id) => {
@@ -33,7 +33,7 @@ const getTaskById = async (id) => {
 }
 
 // Updates task
-const updateTask = async (body, id) =>{
+const updateTaskById = async (body, id) =>{
     const {status} = body
     
     // Checks if status is assigned
@@ -65,6 +65,6 @@ const updateTask = async (body, id) =>{
 module.exports = {
     getTaskById,
     createTask,
-    updateTask,
-    deleteTask,
+    updateTaskById,
+    deleteTaskById,
 }

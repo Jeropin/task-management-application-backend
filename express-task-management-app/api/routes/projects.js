@@ -12,6 +12,6 @@ router.get("/:id", Project.getProjectById);
 router.post("/", Project.createProject);
 
 // PUT projects/:id
-router.put("/:id", Project.updateProject)
+router.put("/:id", Project.updateProjectById)
 
 module.exports = router;

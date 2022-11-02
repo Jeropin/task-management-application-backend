@@ -1,5 +1,6 @@
 const TaskService = require("../services/task");
 
+// Create Task
 const createTask = async (req, res) =>{
     const {body} = req;
 
@@ -11,6 +12,7 @@ const createTask = async (req, res) =>{
     }
 }
 
+// Get Task By ID
 const getTaskById = async (req, res) =>{
     const {params: {id}} = req;
 
@@ -22,22 +24,24 @@ const getTaskById = async (req, res) =>{
     }
 }
 
-const updateTask = async (req, res) =>{
+// Update Task By ID
+const updateTaskById = async (req, res) =>{
     const {body, params:{id}} = req;
 
     try{
-        const task = await TaskService.updateTask(body, id);
+        const task = await TaskService.updateTaskById(body, id);
         res.json(task);
     } catch (error){
         res.status(500).send({ error: error.toString()});
     }
 }
 
-const deleteTask = async (req, res) =>{
+// Delete Task By ID
+const deleteTaskById = async (req, res) =>{
     const {params: {id}} = req;
 
     try{
-        const task = await TaskService.deleteTask(id);
+        const task = await TaskService.deleteTaskById(id);
         res.json(task);
     } catch (error){
         res.status(500).send({ error: error.toString()});
@@ -47,6 +51,6 @@ const deleteTask = async (req, res) =>{
 module.exports = {
     getTaskById,
     createTask,
-    updateTask,
-    deleteTask,
+    updateTaskById,
+    deleteTaskById,
 }
