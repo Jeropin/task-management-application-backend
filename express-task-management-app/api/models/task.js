@@ -6,8 +6,15 @@ const TaskSchema = new Schema(
     {
         name: String,
         details: String,
-        priority: ['low', 'medium', 'high'],
-        status: ['assigned', 'in progress', 'in review', 'completed'],
+        priority: {
+            type: String,
+            enum: ['low', 'medium', 'high']
+        },
+
+        status: {
+            type: String,
+            enum: ['assigned', 'in progress', 'in review', 'completed']
+        },
 
         timeline: {
             assigned: Date,
