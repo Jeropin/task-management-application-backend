@@ -1,5 +1,3 @@
-//Virtualize this or tasks
-//HEY FIX THE NAME OF REPOSITORY
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
