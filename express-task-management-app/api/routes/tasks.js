@@ -3,6 +3,9 @@ const router = require("express").Router();
 const Task = require("../controllers/task");
 
 // GET /tasks/:id
+router.get("/", Task.getAllTask);
+
+// GET /tasks/:id
 router.get("/:id", Task.getTaskById);
 
 // POST /tasks

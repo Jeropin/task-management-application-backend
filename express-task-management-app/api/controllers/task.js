@@ -24,6 +24,15 @@ const getTaskById = async (req, res) =>{
     }
 }
 
+const getAllTask = async (req, res) =>{
+    try{
+        const task = await TaskService.getAllTask();
+        res.json(task);
+    } catch (error){
+        res.status(500).send({ error: error.toString()});
+    }
+}
+
 // Update Task By ID
 const updateTaskById = async (req, res) =>{
     const {body, params:{id}} = req;
@@ -53,4 +62,5 @@ module.exports = {
     createTask,
     updateTaskById,
     deleteTaskById,
+    getAllTask,
 }

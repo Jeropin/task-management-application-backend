@@ -1,6 +1,28 @@
 const Task = require("../models/task");
+const Project = require("../models/project");
+const User = require("../models/user");
 
 const SharedService = require("../services/shared");
+
+// Updates the project with tasks associated with the task
+const _updateProjectTask = async(taskId) => {
+    const pullProjectTasks = await Project.updateOne(
+        {tasks: taskId},
+        {$pull: {tasks: taskId}},
+        {returnDocument: "after"}
+    )
+    return pullProjectTasks
+}
+
+// Updates the project with tasks associated with the task
+const _updateUserTask = async(taskId) => {
+    const pullUserTasks = await User.updateOne(
+        {tasks: taskId},
+        {$pull: {tasks: taskId}},
+        {returnDocument: "after"}
+    )
+    return pullUserTasks
+}
 
 // Checks if Task status is assigned
 const _canUpdateTask = async (id) =>{
@@ -8,11 +30,26 @@ const _canUpdateTask = async (id) =>{
     return Boolean(validTask);
 }
 
+const getAllTask = async() => await SharedService.all(Task);
+
 // Creates a new task using body
 const createTask = async(body) => await SharedService.create(Task, body);
 
 // Deletes a task using id
-const deleteTaskById = async(id) => await SharedService.remove(Task, id);
+const deleteTaskById = async(id) =>{
+    
+    // Delete the task
+    const removeTask = await SharedService.remove(Task, id);
+
+    // Updates Project dissociate task from project
+    const updateProject = await _updateProjectTask(id)
+
+    // Updates User to dissociate task from user
+    const updateUser = await _updateUserTask(id)
+
+    // Returns object that shows removeTask, updateProject, updateUser
+    return {Task: removeTask, Project: updateProject, User: updateUser};
+}
 
 // Gets task by id
 const getTaskById = async (id) => {
@@ -67,4 +104,5 @@ module.exports = {
     createTask,
     updateTaskById,
     deleteTaskById,
+    getAllTask,
 }
